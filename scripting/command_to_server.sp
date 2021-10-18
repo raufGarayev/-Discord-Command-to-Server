@@ -32,6 +32,7 @@ public void OnPluginStart()
     HookConVarChange(g_cvBotToken, OnCtsSettingsChanged);
     HookConVarChange(g_cvCmdChannel, OnCtsSettingsChanged);
     HookConVarChange(g_cvOutputChannel, OnCtsSettingsChanged);
+    HookConVarChange(g_cvServerId, OnCtsSettingsChanged);
 }
 
 public int OnCtsSettingsChanged(Handle convar, const char[] oldValue, const char[] newValue)
