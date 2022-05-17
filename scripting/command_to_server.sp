@@ -81,13 +81,16 @@ public void ChannelList(DiscordBot bot, char[] guild, DiscordChannel Channel, an
 	}
 }
 
-public void OnMessage(DiscordBot Bot, DiscordChannel Channel, DiscordMessage message) 
+public void OnMessage(DiscordBot Bot, DiscordChannel Channel, DiscordMessage message)
 {
-    char sMessage[2048];
-    message.GetContent(sMessage, sizeof(sMessage));
-    char sBuffer[3096];
-	
-    ServerCommandEx(sBuffer, sizeof(sBuffer), sMessage);
+	if (message.GetAuthor().IsBot())
+		return;
 
-    gBot.SendMessageToChannelID(g_sOutputChannel, sBuffer);
+	char sMessage[2048];
+	message.GetContent(sMessage, sizeof(sMessage));
+	char sBuffer[3096];
+
+	ServerCommandEx(sBuffer, sizeof(sBuffer), sMessage);
+
+	gBot.SendMessageToChannelID(g_sOutputChannel, sBuffer);
 }
