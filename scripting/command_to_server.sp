@@ -55,7 +55,7 @@ public int OnCtsSettingsChanged(Handle convar, const char[] oldValue, const char
     }
 }
 
-public void OnAllPluginsLoaded() 
+public void OnConfigsExecuted() 
 {
     gBot = new DiscordBot(g_sBotToken);
     
