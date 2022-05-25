@@ -11,7 +11,7 @@ public Plugin myinfo =
 	name        = "[Discord] Command to Server",
 	author      = "GARAYEV",
 	description = "Send command from discord to server",
-	version     = "1.1",
+	version     = "1.2",
 	url         = "www.garayev-sp.ru & Discord: GARAYEV#9999"
 };
 
